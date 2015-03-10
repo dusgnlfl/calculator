@@ -9,74 +9,91 @@ public class MainActivity extends Activity {
 
     TextView value1;
     TextView value2;
+    TextView sign;
     TextView res;
 
     int flag=1;
+    int num1;
+    int num2;
+    int finalnum;
+    double finalnum2;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         value1=(TextView) findViewById(R.id.firstvalue);
         value2=(TextView) findViewById(R.id.secondvalue);
+        sign=(TextView) findViewById(R.id.sign);
         res=(TextView) findViewById(R.id.result);
+    }
+    public void numBtnExecute(int num) {
+        if(flag==1) {
+            value1.setText(Integer.toString(num));
+            flag=2;
+            num1=num;
+        }
+        else if(flag==2) {
+            value2.setText(Integer.toString(num));
+            flag=1;
+            num2=num;
+        }
+    }
+
+    public void signBtnExecute(String sym) {
+        sign.setText(sym);
     }
 
     public void mOnClick(View v) {
         switch (v.getId()) {
             case R.id.one:
-                if(flag==1) {
-                    value1.setText("1");
-                    flag=2;
-                }
-                else if(flag==2) {
-                    value2.setText("1");
-                    flag=1;
-                }
+                numBtnExecute(1);
                 break;
             case R.id.two:
-                value2.setText("2");
+                numBtnExecute(2);
                 break;
             case R.id.three:
-                value1.setText("1");
+                numBtnExecute(3);
                 break;
             case R.id.four:
-                value2.setText("2");
+                numBtnExecute(4);
                 break;
             case R.id.five:
-                value1.setText("1");
+                numBtnExecute(5);
                 break;
             case R.id.six:
-                value2.setText("2");
+                numBtnExecute(6);
                 break;
             case R.id.seven:
-                value1.setText("1");
+                numBtnExecute(7);
                 break;
             case R.id.eight:
-                value2.setText("2");
+                numBtnExecute(8);
                 break;
             case R.id.nine:
-                value1.setText("1");
+                numBtnExecute(9);
                 break;
             case R.id.zero:
-                value2.setText("2");
+                numBtnExecute(0);
                 break;
             case R.id.plus:
-                value1.setText("1");
+                signBtnExecute("+");
                 break;
             case R.id.minus:
-                value2.setText("2");
+                signBtnExecute("-");
                 break;
             case R.id.mul:
-                value1.setText("1");
+                signBtnExecute("*");
                 break;
             case R.id.div:
-                value2.setText("2");
+                signBtnExecute("/");
                 break;
             case R.id.account:
-                value1.setText("1");
                 break;
             case R.id.reset:
-                value2.setText("2");
+                value1.setText("");
+                value2.setText("");
+                sign.setText("");
+                res.setText("");
                 break;
         }
     }
