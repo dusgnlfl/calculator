@@ -1,39 +1,34 @@
 package com.example.yeonsang.calculator;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
+public class MainActivity extends Activity {
 
-public class MainActivity extends ActionBarActivity {
+    TextView value1;
+    TextView value2;
+    TextView res;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    int flag=1;
+
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        value1=(TextView) findViewById(R.id.firstvalue);
+        value2=(TextView) findViewById(R.id.secondvalue);
+        res=(TextView) findViewById(R.id.result);
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+    public void mOnClick(View v) {
+        switch (v.getId()) {
+            case R.id.one:
+                value1.setText("1");
+                break;
+            case R.id.two:
+                value2.setText("2");
+                break;
         }
-
-        return super.onOptionsItemSelected(item);
     }
 }
