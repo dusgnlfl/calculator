@@ -24,9 +24,58 @@ public class MainActivity extends Activity {
     public void mOnClick(View v) {
         switch (v.getId()) {
             case R.id.one:
-                value1.setText("1");
+                if(flag==1) {
+                    value1.setText("1");
+                    flag=2;
+                }
+                else if(flag==2) {
+                    value2.setText("1");
+                    flag=1;
+                }
                 break;
             case R.id.two:
+                value2.setText("2");
+                break;
+            case R.id.three:
+                value1.setText("1");
+                break;
+            case R.id.four:
+                value2.setText("2");
+                break;
+            case R.id.five:
+                value1.setText("1");
+                break;
+            case R.id.six:
+                value2.setText("2");
+                break;
+            case R.id.seven:
+                value1.setText("1");
+                break;
+            case R.id.eight:
+                value2.setText("2");
+                break;
+            case R.id.nine:
+                value1.setText("1");
+                break;
+            case R.id.zero:
+                value2.setText("2");
+                break;
+            case R.id.plus:
+                value1.setText("1");
+                break;
+            case R.id.minus:
+                value2.setText("2");
+                break;
+            case R.id.mul:
+                value1.setText("1");
+                break;
+            case R.id.div:
+                value2.setText("2");
+                break;
+            case R.id.account:
+                value1.setText("1");
+                break;
+            case R.id.reset:
                 value2.setText("2");
                 break;
         }

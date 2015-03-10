@@ -10,7 +10,10 @@
         android:layout_height="wrap_content"
         android:textSize="50px"
         android:layout_marginBottom="70px"/>
-
+    <!--계산기 전체의 모양 형태를 테이블 형태로 표현하기 위하여 Gridlayout을 사용하여 표현.
+        8행 4열로 전체 크기를 설정하고 그 안에 버튼으로 숫자와 연산기호들을 표현하고 값이 표현되는
+        곳은 TextView를 사용하여 나타나게 구성하였다.
+        -->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
